@@ -13,7 +13,7 @@ export const FLOOR_HEIGHT = 2.3;
 export const NB_FLOORS = 3;
 
 export function Office(props) {
-  const { nodes, materials } = useGLTF("/public/models/WawaOffice.glb");
+  const { nodes, materials } = useGLTF("/models/WawaOffice.glb");
   const ref = useRef();
   const tl = useRef();
   const libraryRef = useRef();
@@ -61,23 +61,23 @@ export function Office(props) {
 
     // Office movement
     tl.current.to(
-        ref.current.position,
-        {
-            duration: 1,
-            x: -1,
-            z: 2,
-        },
-        0
-    )
+      ref.current.position,
+      {
+        duration: 1,
+        x: -1,
+        z: 2,
+      },
+      0
+    );
     tl.current.to(
-        ref.current.position,
-        {
-            duration: 1,
-            x: 1,
-            z: 2,
-        },
-        1
-    )
+      ref.current.position,
+      {
+        duration: 1,
+        x: 1,
+        z: 2,
+      },
+      1
+    );
 
     // Library floor
     tl.current.from(
@@ -153,4 +153,4 @@ export function Office(props) {
   );
 }
 
-useGLTF.preload("/public/models/WawaOffice.glb");
+useGLTF.preload("/models/WawaOffice.glb");
